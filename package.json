@@ -1,0 +1,54 @@
+{
+  "name": "my-node-project-template",
+  "version": "1.0.0",
+  "description": "Node.js + TypeScript project template",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ART1KZ/my-node-project-template"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
+  },
+  "packageManager": "npm@11.6.1",
+  "scripts": {
+    "setup": "npm ci && npm run env:sync && npm run check",
+    "setup:latest": "npm run deps:update && npm run env:sync",
+    "dev": "tsx watch -r dotenv/config src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node -r dotenv/config dist/index.js",
+    "env:sync": "node scripts/setup.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run build",
+    "deps:patch": "npm update && npm run check && npm test",
+    "deps:update": "npx -y npm-check-updates@latest -u && npm install && npm run check && npm test",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^25.0.9",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^17.23.2",
+    "globals": "^17.0.0",
+    "prettier": "^3.8.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.53.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "zod": "^4.3.5"
+  }
+}
