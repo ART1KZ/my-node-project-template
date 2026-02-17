@@ -2,3 +2,6 @@
 .vscode/
 .zencoder/
 .zenflow/
+dist/
+build/
+package-lock.json
