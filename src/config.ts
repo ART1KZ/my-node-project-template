@@ -6,8 +6,8 @@ const envSchema = z.object({
   HOST: z.string().default('0.0.0.0'),
   PORT: z.coerce.number().int().min(1).max(65535).default(3000),
   LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).default('info'),
-  DATABASE_URL: z.string().url().optional(),
-  REDIS_URL: z.string().url().optional(),
+  DATABASE_httpUrl: z.url().optional(),
+  REDIS_URL: z.httpUrl().optional(),
 });
 
 const result = envSchema.safeParse(process.env);
