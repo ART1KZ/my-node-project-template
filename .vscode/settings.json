@@ -5,5 +5,12 @@
     "source.fixAll.eslint": "explicit" // Авто-фикс правил ESLint (импорты, вары)
   },
   "eslint.validate": ["javascript", "typescript"],
-  "eslint.workingDirectories": [{ "mode": "auto" }]
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
