@@ -1,4 +1,4 @@
-﻿version: 2
+version: 2
 updates:
   - package-ecosystem: 'npm'
     directory: '/'
@@ -8,19 +8,6 @@ updates:
       time: '06:00'
       timezone: 'UTC'
     open-pull-requests-limit: 5
-    labels:
-      - 'dependencies'
-      - 'safe-updates'
-    commit-message:
-      prefix: 'deps'
-      include: 'scope'
-    groups:
-      npm-patch-minor:
-        patterns:
-          - '*'
-        update-types:
-          - 'patch'
-          - 'minor'
     ignore:
       - dependency-name: '*'
         update-types:
@@ -34,19 +21,6 @@ updates:
       time: '06:30'
       timezone: 'UTC'
     open-pull-requests-limit: 3
-    labels:
-      - 'dependencies'
-      - 'ci'
-    commit-message:
-      prefix: 'ci'
-      include: 'scope'
-    groups:
-      actions-patch-minor:
-        patterns:
-          - '*'
-        update-types:
-          - 'patch'
-          - 'minor'
     ignore:
       - dependency-name: '*'
         update-types:
